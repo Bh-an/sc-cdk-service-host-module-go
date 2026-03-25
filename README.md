@@ -17,6 +17,12 @@ Do not hand-maintain the implementation here. The source of truth remains:
 github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule
 ```
 
+The generated Go module lives under:
+
+```text
+cdkec2servicemodule/
+```
+
 ## Current Release
 
 `v0.1.0`
