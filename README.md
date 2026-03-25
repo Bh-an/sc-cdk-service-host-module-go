@@ -14,7 +14,7 @@ Do not hand‑maintain the implementation here. The source of truth remains:
 ## Published Module
 
 ```text
-github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule
+github.com/Bh-an/sc-cdk-ec2-service-module-go/cdkec2servicemodule
 ```
 
 The generated Go module lives under:
@@ -31,7 +31,7 @@ cdkec2servicemodule/
 
 ## Current Release
 
-`v0.1.1`
+`v0.1.2`
 
 ## Contents
 
@@ -49,3 +49,7 @@ Tracked docs in this repo must stay minimal and release‑oriented.
 - this repo documents the published Go module path and release line
 - implementation detail and design rationale stay in the TypeScript source repo
 - local operational notes belong under `project_docs/` and are not part of the published surface
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branch usage, Conventional Commit rules, and wrapper regeneration workflow.
