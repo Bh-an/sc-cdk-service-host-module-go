@@ -2,13 +2,13 @@ package cdkec2servicemodule
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule/jsii"
+	_init_ "github.com/Bh-an/sc-cdk-ec2-service-module-go/cdkec2servicemodule/jsii"
 
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsec2"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awskms"
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule/internal"
+	"github.com/Bh-an/sc-cdk-ec2-service-module-go/cdkec2servicemodule/internal"
 )
 
 type Ec2DockerService interface {
