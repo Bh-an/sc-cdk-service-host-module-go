@@ -35,3 +35,11 @@ The generated package exposes the shared service contracts and the two concrete 
 - `PrivateEc2DockerService`
 
 These bindings are generated from the TypeScript source repo and should be refreshed from there for each new release.
+
+## Documentation Governance
+
+Tracked docs in this repo must stay minimal and release-oriented.
+
+- this repo documents the published Go module path and release line
+- implementation detail and design rationale stay in the TypeScript source repo
+- local operational notes belong under `project_docs/` and are not part of the published surface

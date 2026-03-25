@@ -1,15 +1,11 @@
 module github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule
 
-go 1.25.0
+go 1.25
 
 require (
-	github.com/aws/aws-cdk-go/awscdk/v2 v2.207.0
-	github.com/aws/constructs-go/constructs/v10 v10.4.2
 	github.com/aws/jsii-runtime-go v1.127.0
-)
-
-require (
-	github.com/Masterminds/semver/v3 v3.4.0 // indirect
+	github.com/aws/aws-cdk-go/awscdk/v2 v2.207.0
+	github.com/aws/constructs-go/constructs/v10 v10.0.5
 	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.242 // indirect
 	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv6/v2 v2.1.1 // indirect
 	github.com/cdklabs/cloud-assembly-schema-go/awscdkcloudassemblyschema/v45 v45.2.0 // indirect
