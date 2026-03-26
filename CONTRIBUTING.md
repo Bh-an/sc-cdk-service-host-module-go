@@ -17,6 +17,7 @@ type(scope): short description
 
 - `main` is the stable branch
 - `dev` is the shared integration and release-prep branch
+- `ci-cd` is reserved for workflow, release, and automation-only changes
 
 ## Releases
 
@@ -25,6 +26,7 @@ type(scope): short description
   - `version`
   - `source_tag`
 - required secret for source checkout and cross-repo orchestration: `RELEASE_REPO_TOKEN`
+- reruns should remain safe when release tags already exist remotely
 
 ## Wrapper Regeneration
 

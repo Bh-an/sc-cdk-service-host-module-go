@@ -18,11 +18,21 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    concurrency:
+      group: release-${{ inputs.version }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: main
+
+      - name: Validate dispatch inputs
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_REPO_TOKEN }}
+        run: |
+          test "v${{ inputs.version }}" = "${{ inputs.source_tag }}"
+          test -n "$GH_TOKEN"
 
       - uses: actions/checkout@v4
         with:
@@ -33,7 +43,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: source/package-lock.json
 
@@ -74,9 +84,13 @@ jobs:
           git fetch origin main --tags
           git checkout main
           git pull --ff-only origin main
-          git tag "v${{ inputs.version }}"
-          git tag "cdkservicehostmodule/v${{ inputs.version }}"
-          git push origin "v${{ inputs.version }}" "cdkservicehostmodule/v${{ inputs.version }}"
+          if ! git ls-remote --exit-code --tags origin "refs/tags/v${{ inputs.version }}" >/dev/null 2>&1; then
+            git tag "v${{ inputs.version }}"
+          fi
+          if ! git ls-remote --exit-code --tags origin "refs/tags/cdkservicehostmodule/v${{ inputs.version }}" >/dev/null 2>&1; then
+            git tag "cdkservicehostmodule/v${{ inputs.version }}"
+          fi
+          git push origin "v${{ inputs.version }}" "cdkservicehostmodule/v${{ inputs.version }}" || true
 
       - name: Create release
         uses: softprops/action-gh-release@v2
