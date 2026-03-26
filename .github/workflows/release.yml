@@ -1,0 +1,85 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version without leading v
+        required: true
+        type: string
+      source_tag:
+        description: Source repo tag, e.g. v0.3.0
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - uses: actions/checkout@v4
+        with:
+          repository: Bh-an/sc-cdk-service-host-module
+          ref: ${{ inputs.source_tag }}
+          path: source
+          token: ${{ secrets.RELEASE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: cdkservicehostmodule/go.mod
+
+      - name: Generate wrapper from source tag
+        working-directory: source
+        run: |
+          npm ci
+          npm run package:go
+
+      - name: Sync generated wrapper
+        run: |
+          rsync -a --delete source/dist/go/cdkservicehostmodule/ cdkservicehostmodule/
+
+      - name: Verify wrapper
+        working-directory: cdkservicehostmodule
+        run: |
+          go mod tidy
+          go build ./...
+
+      - name: Commit regenerated wrapper
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cdkservicehostmodule
+          if git diff --cached --quiet; then
+            echo "No wrapper changes to commit"
+          else
+            git commit -m "chore(go): release v${{ inputs.version }} wrapper refresh"
+            git push origin main
+          fi
+
+      - name: Tag release
+        run: |
+          git fetch origin main --tags
+          git checkout main
+          git pull --ff-only origin main
+          git tag "v${{ inputs.version }}"
+          git tag "cdkservicehostmodule/v${{ inputs.version }}"
+          git push origin "v${{ inputs.version }}" "cdkservicehostmodule/v${{ inputs.version }}"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ inputs.version }}
+          generate_release_notes: true

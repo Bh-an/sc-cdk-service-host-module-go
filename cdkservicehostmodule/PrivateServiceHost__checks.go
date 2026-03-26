@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-func validateEc2DockerService_IsConstructParameters(x interface{}) error {
+func validatePrivateServiceHost_IsConstructParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
 	}
@@ -18,7 +18,7 @@ func validateEc2DockerService_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
-func validateNewEc2DockerServiceParameters(scope constructs.Construct, id *string, props *Ec2DockerServiceProps) error {
+func validateNewPrivateServiceHostParameters(scope constructs.Construct, id *string, props *PrivateServiceHostProps) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")
 	}

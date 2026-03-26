@@ -11,7 +11,7 @@ import (
 	"github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule/internal"
 )
 
-type PrivateEc2DockerService interface {
+type PrivateServiceHost interface {
 	constructs.Construct
 	DataKey() awskms.IKey
 	DataMountPath() *string
@@ -28,12 +28,12 @@ type PrivateEc2DockerService interface {
 	ToString() *string
 }
 
-// The jsii proxy struct for PrivateEc2DockerService
-type jsiiProxy_PrivateEc2DockerService struct {
+// The jsii proxy struct for PrivateServiceHost
+type jsiiProxy_PrivateServiceHost struct {
 	internal.Type__constructsConstruct
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) DataKey() awskms.IKey {
+func (j *jsiiProxy_PrivateServiceHost) DataKey() awskms.IKey {
 	var returns awskms.IKey
 	_jsii_.Get(
 		j,
@@ -43,7 +43,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) DataKey() awskms.IKey {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) DataMountPath() *string {
+func (j *jsiiProxy_PrivateServiceHost) DataMountPath() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
@@ -53,7 +53,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) DataMountPath() *string {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) DataVolumeDeviceName() *string {
+func (j *jsiiProxy_PrivateServiceHost) DataVolumeDeviceName() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
@@ -63,7 +63,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) DataVolumeDeviceName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) ElasticIp() awsec2.CfnEIP {
+func (j *jsiiProxy_PrivateServiceHost) ElasticIp() awsec2.CfnEIP {
 	var returns awsec2.CfnEIP
 	_jsii_.Get(
 		j,
@@ -73,7 +73,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) ElasticIp() awsec2.CfnEIP {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) Instance() awsec2.Instance {
+func (j *jsiiProxy_PrivateServiceHost) Instance() awsec2.Instance {
 	var returns awsec2.Instance
 	_jsii_.Get(
 		j,
@@ -83,7 +83,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) Instance() awsec2.Instance {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) Node() constructs.Node {
+func (j *jsiiProxy_PrivateServiceHost) Node() constructs.Node {
 	var returns constructs.Node
 	_jsii_.Get(
 		j,
@@ -93,7 +93,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) Role() awsiam.IRole {
+func (j *jsiiProxy_PrivateServiceHost) Role() awsiam.IRole {
 	var returns awsiam.IRole
 	_jsii_.Get(
 		j,
@@ -103,7 +103,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) Role() awsiam.IRole {
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) SecurityGroup() awsec2.ISecurityGroup {
+func (j *jsiiProxy_PrivateServiceHost) SecurityGroup() awsec2.ISecurityGroup {
 	var returns awsec2.ISecurityGroup
 	_jsii_.Get(
 		j,
@@ -113,7 +113,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) SecurityGroup() awsec2.ISecurityGrou
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) ServiceIdentity() *ResolvedPlatformServiceIdentity {
+func (j *jsiiProxy_PrivateServiceHost) ServiceIdentity() *ResolvedPlatformServiceIdentity {
 	var returns *ResolvedPlatformServiceIdentity
 	_jsii_.Get(
 		j,
@@ -123,7 +123,7 @@ func (j *jsiiProxy_PrivateEc2DockerService) ServiceIdentity() *ResolvedPlatformS
 	return returns
 }
 
-func (j *jsiiProxy_PrivateEc2DockerService) ServiceOutputs() *NetworkAddressableServiceOutputs {
+func (j *jsiiProxy_PrivateServiceHost) ServiceOutputs() *NetworkAddressableServiceOutputs {
 	var returns *NetworkAddressableServiceOutputs
 	_jsii_.Get(
 		j,
@@ -134,16 +134,16 @@ func (j *jsiiProxy_PrivateEc2DockerService) ServiceOutputs() *NetworkAddressable
 }
 
 
-func NewPrivateEc2DockerService(scope constructs.Construct, id *string, props *PrivateEc2DockerServiceProps) PrivateEc2DockerService {
+func NewPrivateServiceHost(scope constructs.Construct, id *string, props *PrivateServiceHostProps) PrivateServiceHost {
 	_init_.Initialize()
 
-	if err := validateNewPrivateEc2DockerServiceParameters(scope, id, props); err != nil {
+	if err := validateNewPrivateServiceHostParameters(scope, id, props); err != nil {
 		panic(err)
 	}
-	j := jsiiProxy_PrivateEc2DockerService{}
+	j := jsiiProxy_PrivateServiceHost{}
 
 	_jsii_.Create(
-		"cdk-service-host-module.PrivateEc2DockerService",
+		"cdk-service-host-module.PrivateServiceHost",
 		[]interface{}{scope, id, props},
 		&j,
 	)
@@ -151,11 +151,11 @@ func NewPrivateEc2DockerService(scope constructs.Construct, id *string, props *P
 	return &j
 }
 
-func NewPrivateEc2DockerService_Override(p PrivateEc2DockerService, scope constructs.Construct, id *string, props *PrivateEc2DockerServiceProps) {
+func NewPrivateServiceHost_Override(p PrivateServiceHost, scope constructs.Construct, id *string, props *PrivateServiceHostProps) {
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"cdk-service-host-module.PrivateEc2DockerService",
+		"cdk-service-host-module.PrivateServiceHost",
 		[]interface{}{scope, id, props},
 		p,
 	)
@@ -165,16 +165,16 @@ func NewPrivateEc2DockerService_Override(p PrivateEc2DockerService, scope constr
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
 // Deprecated: use `x instanceof Construct` instead.
-func PrivateEc2DockerService_IsConstruct(x interface{}) *bool {
+func PrivateServiceHost_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
-	if err := validatePrivateEc2DockerService_IsConstructParameters(x); err != nil {
+	if err := validatePrivateServiceHost_IsConstructParameters(x); err != nil {
 		panic(err)
 	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"cdk-service-host-module.PrivateEc2DockerService",
+		"cdk-service-host-module.PrivateServiceHost",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -183,7 +183,7 @@ func PrivateEc2DockerService_IsConstruct(x interface{}) *bool {
 	return returns
 }
 
-func (p *jsiiProxy_PrivateEc2DockerService) ToString() *string {
+func (p *jsiiProxy_PrivateServiceHost) ToString() *string {
 	var returns *string
 
 	_jsii_.Invoke(

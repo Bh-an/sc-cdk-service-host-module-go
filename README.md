@@ -31,14 +31,14 @@ cdkservicehostmodule/
 
 ## Current Release
 
-`v0.2.0-dev`
+`v0.3.0-dev`
 
 ## Contents
 
 The generated package exposes the shared service contracts and the two concrete constructs:
 
-- `Ec2DockerService`
-- `PrivateEc2DockerService`
+- `PublicServiceHost`
+- `PrivateServiceHost`
 
 These bindings are generated from the TypeScript source repo and should be refreshed from there for each new release.
 
