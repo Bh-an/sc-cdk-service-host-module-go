@@ -31,7 +31,7 @@ cdkservicehostmodule/
 
 ## Current Release
 
-`v0.3.0-dev`
+`v0.3.0`
 
 ## Contents
 
