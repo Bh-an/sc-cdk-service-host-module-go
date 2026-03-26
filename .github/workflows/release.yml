@@ -22,7 +22,7 @@ jobs:
       group: release-${{ inputs.version }}
       cancel-in-progress: false
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: main
@@ -34,20 +34,20 @@ jobs:
           test "v${{ inputs.version }}" = "${{ inputs.source_tag }}"
           test -n "$GH_TOKEN"
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           repository: Bh-an/sc-cdk-service-host-module
           ref: ${{ inputs.source_tag }}
           path: source
           token: ${{ secrets.RELEASE_REPO_TOKEN }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: source/package-lock.json
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: cdkservicehostmodule/go.mod
 
