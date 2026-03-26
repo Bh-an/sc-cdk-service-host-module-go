@@ -1,4 +1,4 @@
-module github.com/Bh-an/sc-cdk-ec2-service-module-go/cdkec2servicemodule
+module github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule
 
 go 1.25.0
 

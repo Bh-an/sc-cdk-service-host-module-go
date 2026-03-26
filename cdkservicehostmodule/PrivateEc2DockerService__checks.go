@@ -1,6 +1,6 @@
 //go:build !no_runtime_type_checking
 
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 import (
 	"fmt"

@@ -1,6 +1,6 @@
-# cdk-ec2-service-module-go
+# cdk-service-host-module-go
 
-This repository contains the generated Go bindings for `cdk-ec2-service-module`.
+This repository contains the generated Go bindings for `cdk-service-host-module`.
 
 Use this repo when:
 
@@ -9,29 +9,29 @@ Use this repo when:
 
 Do not hand‑maintain the implementation here. The source of truth remains:
 
-- `https://github.com/Bh-an/sc-cdk-ec2-service-module`
+- `https://github.com/Bh-an/sc-cdk-service-host-module`
 
 ## Published Module
 
 ```text
-github.com/Bh-an/sc-cdk-ec2-service-module-go/cdkec2servicemodule
+github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule
 ```
 
 The generated Go module lives under:
 
 ```text
-cdkec2servicemodule/
+cdkservicehostmodule/
 ```
 
 ## Relationship & Contract
 
 - CDK is the primary deployment path; these bindings are the supported interface.
-- Terraform is an aligned secondary path in `https://github.com/Bh-an/sc-tf-ec2-service-module`.
-- The service repo `ec2-go-service` builds and publishes its Docker image to GHCR: `ghcr.io/bh-an/ec2-go-service:<tag>`.
+- Terraform is an aligned secondary path in `https://github.com/Bh-an/sc-tf-service-host-module`.
+- The service repo `sc-ec2-go-service` builds and publishes its Docker image to GHCR: `ghcr.io/bh-an/ec2-go-service:<tag>`.
 
 ## Current Release
 
-`v0.1.2`
+`v0.2.0-dev`
 
 ## Contents
 

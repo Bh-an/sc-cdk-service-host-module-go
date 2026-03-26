@@ -1,5 +1,5 @@
 // Reusable CDK constructs for provisioning a small EC2-hosted Docker service with Nginx, EBS, KMS, and SSM access.
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 import (
 	"reflect"
@@ -9,7 +9,7 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"cdk-ec2-service-module.Ec2DockerService",
+		"cdk-service-host-module.Ec2DockerService",
 		reflect.TypeOf((*Ec2DockerService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dataKey", GoGetter: "DataKey"},
@@ -31,43 +31,43 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.Ec2DockerServiceProps",
+		"cdk-service-host-module.Ec2DockerServiceProps",
 		reflect.TypeOf((*Ec2DockerServiceProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.Ec2DockerServiceRuntimeProps",
+		"cdk-service-host-module.Ec2DockerServiceRuntimeProps",
 		reflect.TypeOf((*Ec2DockerServiceRuntimeProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.Ec2OperationalControls",
+		"cdk-service-host-module.Ec2OperationalControls",
 		reflect.TypeOf((*Ec2OperationalControls)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.Ec2ServiceExposure",
+		"cdk-service-host-module.Ec2ServiceExposure",
 		reflect.TypeOf((*Ec2ServiceExposure)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.IngressRule",
+		"cdk-service-host-module.IngressRule",
 		reflect.TypeOf((*IngressRule)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.NetworkAddressableServiceOutputs",
+		"cdk-service-host-module.NetworkAddressableServiceOutputs",
 		reflect.TypeOf((*NetworkAddressableServiceOutputs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.PlatformServiceIdentity",
+		"cdk-service-host-module.PlatformServiceIdentity",
 		reflect.TypeOf((*PlatformServiceIdentity)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.PlatformServiceOutputs",
+		"cdk-service-host-module.PlatformServiceOutputs",
 		reflect.TypeOf((*PlatformServiceOutputs)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.PlatformServiceProps",
+		"cdk-service-host-module.PlatformServiceProps",
 		reflect.TypeOf((*PlatformServiceProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"cdk-ec2-service-module.PrivateEc2DockerService",
+		"cdk-service-host-module.PrivateEc2DockerService",
 		reflect.TypeOf((*PrivateEc2DockerService)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "dataKey", GoGetter: "DataKey"},
@@ -89,15 +89,15 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.PrivateEc2DockerServiceProps",
+		"cdk-service-host-module.PrivateEc2DockerServiceProps",
 		reflect.TypeOf((*PrivateEc2DockerServiceProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.ResolvedPlatformServiceIdentity",
+		"cdk-service-host-module.ResolvedPlatformServiceIdentity",
 		reflect.TypeOf((*ResolvedPlatformServiceIdentity)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
-		"cdk-ec2-service-module.ServiceInfrastructureProps",
+		"cdk-service-host-module.ServiceInfrastructureProps",
 		reflect.TypeOf((*ServiceInfrastructureProps)(nil)).Elem(),
 	)
 }

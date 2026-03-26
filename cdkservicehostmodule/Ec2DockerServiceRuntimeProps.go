@@ -1,14 +1,10 @@
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 import (
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsec2"
 )
 
-type PrivateEc2DockerServiceProps struct {
-	Infrastructure *ServiceInfrastructureProps `field:"required" json:"infrastructure" yaml:"infrastructure"`
-	ServiceName *string `field:"required" json:"serviceName" yaml:"serviceName"`
-	AdditionalTags *map[string]*string `field:"optional" json:"additionalTags" yaml:"additionalTags"`
-	Identity *PlatformServiceIdentity `field:"optional" json:"identity" yaml:"identity"`
+type Ec2DockerServiceRuntimeProps struct {
 	DockerImage *string `field:"required" json:"dockerImage" yaml:"dockerImage"`
 	AllowedIngress *[]*IngressRule `field:"optional" json:"allowedIngress" yaml:"allowedIngress"`
 	BridgeCidr *string `field:"optional" json:"bridgeCidr" yaml:"bridgeCidr"`

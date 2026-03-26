@@ -20,10 +20,10 @@ type(scope): short description
 
 ## Wrapper Regeneration
 
-This repo is generated output. Regenerate it from `sc-cdk-ec2-service-module`:
+This repo is generated output. Regenerate it from `sc-cdk-service-host-module`:
 
 1. update the TypeScript source repo
 2. run `npm run package:go`
-3. sync `dist/go/cdkec2servicemodule/` into this repo
-4. run `go mod tidy` in `cdkec2servicemodule/`
+3. sync `dist/go/cdkservicehostmodule/` into this repo
+4. run `go mod tidy` in `cdkservicehostmodule/`
 5. verify with `go build ./...`
