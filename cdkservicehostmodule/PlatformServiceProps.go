@@ -1,4 +1,4 @@
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 
 type PlatformServiceProps struct {

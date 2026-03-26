@@ -1,10 +1,10 @@
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 import (
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
 )
 
-type Ec2OperationalControls struct {
+type ServiceHostOperationalControls struct {
 	AdditionalManagedPolicies *[]awsiam.IManagedPolicy `field:"optional" json:"additionalManagedPolicies" yaml:"additionalManagedPolicies"`
 	AdditionalRolePolicyStatements *[]awsiam.PolicyStatement `field:"optional" json:"additionalRolePolicyStatements" yaml:"additionalRolePolicyStatements"`
 	EnableDetailedMonitoring *bool `field:"optional" json:"enableDetailedMonitoring" yaml:"enableDetailedMonitoring"`

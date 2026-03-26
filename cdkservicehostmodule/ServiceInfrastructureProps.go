@@ -1,4 +1,4 @@
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 import (
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsec2"
