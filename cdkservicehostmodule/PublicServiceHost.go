@@ -1,17 +1,17 @@
-package cdkec2servicemodule
+package cdkservicehostmodule
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule/jsii"
+	_init_ "github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule/jsii"
 
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsec2"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awskms"
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/Bh-an/cdk-ec2-service-module-go/cdkec2servicemodule/internal"
+	"github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule/internal"
 )
 
-type Ec2DockerService interface {
+type PublicServiceHost interface {
 	constructs.Construct
 	DataKey() awskms.IKey
 	DataMountPath() *string
@@ -28,12 +28,12 @@ type Ec2DockerService interface {
 	ToString() *string
 }
 
-// The jsii proxy struct for Ec2DockerService
-type jsiiProxy_Ec2DockerService struct {
+// The jsii proxy struct for PublicServiceHost
+type jsiiProxy_PublicServiceHost struct {
 	internal.Type__constructsConstruct
 }
 
-func (j *jsiiProxy_Ec2DockerService) DataKey() awskms.IKey {
+func (j *jsiiProxy_PublicServiceHost) DataKey() awskms.IKey {
 	var returns awskms.IKey
 	_jsii_.Get(
 		j,
@@ -43,7 +43,7 @@ func (j *jsiiProxy_Ec2DockerService) DataKey() awskms.IKey {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) DataMountPath() *string {
+func (j *jsiiProxy_PublicServiceHost) DataMountPath() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
@@ -53,7 +53,7 @@ func (j *jsiiProxy_Ec2DockerService) DataMountPath() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) DataVolumeDeviceName() *string {
+func (j *jsiiProxy_PublicServiceHost) DataVolumeDeviceName() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
@@ -63,7 +63,7 @@ func (j *jsiiProxy_Ec2DockerService) DataVolumeDeviceName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) ElasticIp() awsec2.CfnEIP {
+func (j *jsiiProxy_PublicServiceHost) ElasticIp() awsec2.CfnEIP {
 	var returns awsec2.CfnEIP
 	_jsii_.Get(
 		j,
@@ -73,7 +73,7 @@ func (j *jsiiProxy_Ec2DockerService) ElasticIp() awsec2.CfnEIP {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) Instance() awsec2.Instance {
+func (j *jsiiProxy_PublicServiceHost) Instance() awsec2.Instance {
 	var returns awsec2.Instance
 	_jsii_.Get(
 		j,
@@ -83,7 +83,7 @@ func (j *jsiiProxy_Ec2DockerService) Instance() awsec2.Instance {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) Node() constructs.Node {
+func (j *jsiiProxy_PublicServiceHost) Node() constructs.Node {
 	var returns constructs.Node
 	_jsii_.Get(
 		j,
@@ -93,7 +93,7 @@ func (j *jsiiProxy_Ec2DockerService) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) Role() awsiam.IRole {
+func (j *jsiiProxy_PublicServiceHost) Role() awsiam.IRole {
 	var returns awsiam.IRole
 	_jsii_.Get(
 		j,
@@ -103,7 +103,7 @@ func (j *jsiiProxy_Ec2DockerService) Role() awsiam.IRole {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) SecurityGroup() awsec2.ISecurityGroup {
+func (j *jsiiProxy_PublicServiceHost) SecurityGroup() awsec2.ISecurityGroup {
 	var returns awsec2.ISecurityGroup
 	_jsii_.Get(
 		j,
@@ -113,7 +113,7 @@ func (j *jsiiProxy_Ec2DockerService) SecurityGroup() awsec2.ISecurityGroup {
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) ServiceIdentity() *ResolvedPlatformServiceIdentity {
+func (j *jsiiProxy_PublicServiceHost) ServiceIdentity() *ResolvedPlatformServiceIdentity {
 	var returns *ResolvedPlatformServiceIdentity
 	_jsii_.Get(
 		j,
@@ -123,7 +123,7 @@ func (j *jsiiProxy_Ec2DockerService) ServiceIdentity() *ResolvedPlatformServiceI
 	return returns
 }
 
-func (j *jsiiProxy_Ec2DockerService) ServiceOutputs() *NetworkAddressableServiceOutputs {
+func (j *jsiiProxy_PublicServiceHost) ServiceOutputs() *NetworkAddressableServiceOutputs {
 	var returns *NetworkAddressableServiceOutputs
 	_jsii_.Get(
 		j,
@@ -134,16 +134,16 @@ func (j *jsiiProxy_Ec2DockerService) ServiceOutputs() *NetworkAddressableService
 }
 
 
-func NewEc2DockerService(scope constructs.Construct, id *string, props *Ec2DockerServiceProps) Ec2DockerService {
+func NewPublicServiceHost(scope constructs.Construct, id *string, props *PublicServiceHostProps) PublicServiceHost {
 	_init_.Initialize()
 
-	if err := validateNewEc2DockerServiceParameters(scope, id, props); err != nil {
+	if err := validateNewPublicServiceHostParameters(scope, id, props); err != nil {
 		panic(err)
 	}
-	j := jsiiProxy_Ec2DockerService{}
+	j := jsiiProxy_PublicServiceHost{}
 
 	_jsii_.Create(
-		"cdk-ec2-service-module.Ec2DockerService",
+		"cdk-service-host-module.PublicServiceHost",
 		[]interface{}{scope, id, props},
 		&j,
 	)
@@ -151,13 +151,13 @@ func NewEc2DockerService(scope constructs.Construct, id *string, props *Ec2Docke
 	return &j
 }
 
-func NewEc2DockerService_Override(e Ec2DockerService, scope constructs.Construct, id *string, props *Ec2DockerServiceProps) {
+func NewPublicServiceHost_Override(p PublicServiceHost, scope constructs.Construct, id *string, props *PublicServiceHostProps) {
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"cdk-ec2-service-module.Ec2DockerService",
+		"cdk-service-host-module.PublicServiceHost",
 		[]interface{}{scope, id, props},
-		e,
+		p,
 	)
 }
 
@@ -165,16 +165,16 @@ func NewEc2DockerService_Override(e Ec2DockerService, scope constructs.Construct
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
 // Deprecated: use `x instanceof Construct` instead.
-func Ec2DockerService_IsConstruct(x interface{}) *bool {
+func PublicServiceHost_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
-	if err := validateEc2DockerService_IsConstructParameters(x); err != nil {
+	if err := validatePublicServiceHost_IsConstructParameters(x); err != nil {
 		panic(err)
 	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"cdk-ec2-service-module.Ec2DockerService",
+		"cdk-service-host-module.PublicServiceHost",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -183,11 +183,11 @@ func Ec2DockerService_IsConstruct(x interface{}) *bool {
 	return returns
 }
 
-func (e *jsiiProxy_Ec2DockerService) ToString() *string {
+func (p *jsiiProxy_PublicServiceHost) ToString() *string {
 	var returns *string
 
 	_jsii_.Invoke(
-		e,
+		p,
 		"toString",
 		nil, // no parameters
 		&returns,
