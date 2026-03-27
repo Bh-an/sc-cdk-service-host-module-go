@@ -128,7 +128,7 @@ Reference material for consumers:
 The consumer proof stack demonstrates:
 
 * public path: direct `PublicServiceHost` with module-managed EIP
-* private path: `PrivateServiceHost` behind an ALB, forwarding to the host's Nginx listener
+* private path: `PrivateServiceHost` behind a caller-managed load balancer (ALB), forwarding to the host's Nginx listener
 
 For real deployment and testing, use the operator surface in [`sc-ec2-go-service`](https://github.com/Bh-an/sc-ec2-go-service).
 
@@ -154,7 +154,7 @@ src/
 `v0.3.4`
 
 > [!NOTE]
-> This release line is locally validated and ready for the next fresh-clone public AWS rerun from the service repo.
+> This release line is live-verified through the service repo's fresh-clone public CDK path on `2026-03-27`.
 
 ## Contributing
 
