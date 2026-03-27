@@ -151,10 +151,10 @@ src/
 
 ## Current Release
 
-`v0.3.3`
+`v0.3.4`
 
 > [!NOTE]
-> Live-verified via the service repo's public CDK deployment path on `2026-03-27`.
+> This release line is locally validated and ready for the next fresh-clone public AWS rerun from the service repo.
 
 ## Contributing
 
