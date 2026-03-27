@@ -41,6 +41,13 @@ The generated package lives at:
 cdkservicehostmodule/
 ```
 
+## Capabilities
+
+- Go bindings for `PublicServiceHost` and `PrivateServiceHost`
+- access to the same runtime and Nginx route defaults as the TypeScript source repo
+- generated props for caller-provided infrastructure such as VPC, subnet selection, tags, and KMS key reuse
+- consumption from Go CDK apps without maintaining a separate implementation
+
 <details>
 <summary>Usage example</summary>
 
