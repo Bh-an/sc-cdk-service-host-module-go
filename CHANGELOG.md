@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 Wrapper releases track the source repo [`sc-cdk-service-host-module`](https://github.com/Bh-an/sc-cdk-service-host-module). Each entry here reflects a regeneration from the corresponding source version.
 
+## [0.3.2] - 2026-03-27
+
+### Changed
+- Regenerated bindings from the `v0.3.2` CDK source release
+- Updated generated Nginx defaults to expose only `/api/v1` and `/health`
+- Added the direct Nginx health endpoint used during bootstrap verification
+
 ## [0.3.0] - 2026-03-15
 
 ### Changed

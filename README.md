@@ -7,7 +7,7 @@ Generated Go bindings for [`cdk-service-host-module`](https://github.com/Bh-an/s
 ## Go Module
 
 ```
-go get github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule@v0.3.0
+go get github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule@v0.3.2
 ```
 
 The generated package lives at:
@@ -63,10 +63,10 @@ This repo requires **two tags** per release:
 
 | Tag | Purpose |
 |-----|---------|
-| `v0.3.0` | Repository-level tag (GitHub release) |
-| `cdkservicehostmodule/v0.3.0` | Go module-level tag (required by the Go module proxy for subdirectory modules) |
+| `v0.3.2` | Repository-level tag (GitHub release) |
+| `cdkservicehostmodule/v0.3.2` | Go module-level tag (required by the Go module proxy for subdirectory modules) |
 
-Without the subdirectory tag, `go get cdkservicehostmodule@v0.3.0` will fail.
+Without the subdirectory tag, `go get cdkservicehostmodule@v0.3.2` will fail.
 
 ## Related Repos
 
@@ -78,7 +78,7 @@ Without the subdirectory tag, `go get cdkservicehostmodule@v0.3.0` will fail.
 
 ## Current Release
 
-`v0.3.0`
+`v0.3.2`
 
 ## Contributing
 
