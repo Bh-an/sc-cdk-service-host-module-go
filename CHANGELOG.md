@@ -10,7 +10,7 @@ Wrapper releases track the source repo [`sc-cdk-service-host-module`](https://gi
 
 ### Changed
 - Regenerated bindings from the `v0.3.2` CDK source release
-- Updated generated Nginx defaults to expose only `/api/v1` and `/health`
+- Updated generated Nginx defaults to expose `/api/v1`, `/health`, and `/version`
 - Added the direct Nginx health endpoint used during bootstrap verification
 
 ## [0.3.0] - 2026-03-15
