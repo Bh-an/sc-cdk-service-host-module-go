@@ -50,6 +50,7 @@ The default route config is strict:
 * `/_nginx/health` returns a direct Nginx health payload
 * `/health` proxies to the container health endpoint
 * `/api/v1` proxies to the assignment API endpoint
+* `/version` proxies to the app build metadata endpoint
 * all other paths return `404`
 
 </details>
