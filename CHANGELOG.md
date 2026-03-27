@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 Wrapper releases track the source repo [`sc-cdk-service-host-module`](https://github.com/Bh-an/sc-cdk-service-host-module). Each entry here reflects a regeneration from the corresponding source version.
 
+## [0.3.3] - 2026-03-27
+
+### Changed
+- Regenerated bindings from the `v0.3.3` CDK source release
+- Refreshed the published wrapper payload so the public CDK consumer exposes `/version`
+- Updated the shared private example release line to match the now-deployable two-AZ ALB topology
+
 ## [0.3.2] - 2026-03-27
 
 ### Changed

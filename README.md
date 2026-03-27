@@ -31,7 +31,7 @@ go build ./...
 ## Go Module
 
 ```bash
-go get github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule@v0.3.2
+go get github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule@v0.3.3
 ```
 
 The generated package lives at:
@@ -86,14 +86,14 @@ This repo requires two tags per release:
 
 | Tag | Purpose |
 |-----|---------|
-| `v0.3.2` | Repository-level tag |
-| `cdkservicehostmodule/v0.3.2` | Go module subdirectory tag |
+| `v0.3.3` | Repository-level tag |
+| `cdkservicehostmodule/v0.3.3` | Go module subdirectory tag |
 
-Without the subdirectory tag, `go get cdkservicehostmodule@v0.3.2` will fail.
+Without the subdirectory tag, `go get cdkservicehostmodule@v0.3.3` will fail.
 
 ## Current Release
 
-`v0.3.2`
+`v0.3.3`
 
 ## Contributing
 

@@ -1,8 +1,47 @@
 # cdk-service-host-module
 
-A reusable AWS CDK construct library for deploying Dockerized services on EC2. You hand it a VPC and a container image — it gives you an encrypted, SSM-managed host running your app behind Nginx.
+A reusable AWS CDK construct library for deploying Dockerized services on EC2. You hand it a VPC and a container image; it provisions an encrypted, SSM-managed host running your app behind Nginx.
 
 Written in TypeScript, published as both an npm package and generated Go bindings via JSII.
+
+## Start Here
+
+* [examples/README.md](examples/README.md) — consumer-facing example stacks
+* [`sc-cdk-service-host-module-go`](https://github.com/Bh-an/sc-cdk-service-host-module-go) — generated Go bindings
+* [`sc-ec2-go-service`](https://github.com/Bh-an/sc-ec2-go-service) — operator repo and real consumer
+* [`sc-tf-service-host-module`](https://github.com/Bh-an/sc-tf-service-host-module) — aligned Terraform/Packer implementation
+
+## Prerequisites
+
+For source development in this repo:
+
+* Node 22 preferred
+* npm
+* Go only if you want to inspect or validate the generated wrapper output
+
+Quick local verification:
+
+```bash
+nvm use 22
+npm ci
+npm run verify
+```
+
+`verify` compiles TypeScript, runs tests, and generates the Go bindings.
+
+## What This Repo Owns
+
+* the TypeScript source of truth for the EC2 service host model
+* the default Nginx/runtime/bootstrap contract used by CDK consumers
+* the JSII publishing source that feeds the Go wrapper repo
+
+It does not own:
+
+* the Go application itself
+* the Terraform implementation
+* the operator/testing runbooks
+
+Those live in the related repos linked above.
 
 ## Constructs
 
@@ -26,7 +65,7 @@ Both variants share the same core resource set: EC2 instance, KMS-encrypted EBS 
 | Container IP | `172.30.0.10` | `src/service-host/service-host-core.ts:91` |
 | Data mount path | `/data` | `src/service-host/service-host-core.ts:92` |
 | Data volume device | `/dev/xvdf` | `src/service-host/service-host-core.ts:93` |
-| Root volume | 20 GiB, GP3, KMS-encrypted | `src/service-host/service-host-core.ts:125-129` |
+| Root volume | 30 GiB, GP3, KMS-encrypted | `src/service-host/service-host-core.ts:125-129` |
 | Data volume | 10 GiB, GP3, KMS-encrypted | `src/service-host/service-host-core.ts:134-138` |
 | IMDSv2 | Required | `src/service-host/service-host-core.ts:146` |
 | KMS key rotation | Enabled | `src/service-host/service-host-core.ts:278` |
@@ -55,18 +94,6 @@ The default route config is strict:
 
 </details>
 
-## Quickstart
-
-Node 22 preferred. Supported: 20, 22, 24.
-
-```bash
-nvm use 22
-npm ci
-npm run verify
-```
-
-`verify` runs the full build (TypeScript compile + tests) and generates Go bindings.
-
 ## Published Paths
 
 | Artifact | Path |
@@ -81,44 +108,36 @@ npm run verify
 Reference material for consumers:
 
 * `docs/consumer-cicd.md` — CI/CD integration guidance
-* `.github/workflow-templates/` — consumer deploy workflow templates (CDK and Terraform)
-* `examples/consumer-proof-stack.ts` — validates both postures together: a direct public service and a private service behind a caller-managed ALB
+* `.github/workflow-templates/` — consumer deploy workflow templates
+* `examples/consumer-proof-stack.ts` — validates both postures together
 
 The consumer proof stack demonstrates:
 
-* Public path: direct `PublicServiceHost` with module-managed EIP
-* Private path: `PrivateServiceHost` behind an ALB, forwarding to the host's Nginx listener
+* public path: direct `PublicServiceHost` with module-managed EIP
+* private path: `PrivateServiceHost` behind an ALB, forwarding to the host's Nginx listener
 
-For real deployment, use the operator surface in [`sc-ec2-go-service`](https://github.com/Bh-an/sc-ec2-go-service).
+For real deployment and testing, use the operator surface in [`sc-ec2-go-service`](https://github.com/Bh-an/sc-ec2-go-service).
 
 </details>
 
 ## Source Layout
 
-```
+```text
 src/
   contracts/
     platform-service.ts      Shared types, identity resolution, tag helpers
   service-host/
     public-service-host.ts   PublicServiceHost construct
     private-service-host.ts  PrivateServiceHost construct
-    service-host-core.ts     Core resource factory (IAM, KMS, SG, EC2, EIP, user data)
+    service-host-core.ts     Core resource factory
     default-nginx-config.ts  Nginx config generators
-    types.ts                 IngressRule, ServiceHostExposure, operational controls
+    types.ts                 Ingress and operational controls
   index.ts                   Public exports
 ```
 
-## Related Repos
-
-| Repo | Role |
-|------|------|
-| [sc-cdk-service-host-module-go](https://github.com/Bh-an/sc-cdk-service-host-module-go) | Generated Go bindings for this module |
-| [sc-tf-service-host-module](https://github.com/Bh-an/sc-tf-service-host-module) | Aligned Terraform modules + Packer AMI pipeline |
-| [sc-ec2-go-service](https://github.com/Bh-an/sc-ec2-go-service) | Go application + operator surface + both consumer paths |
-
 ## Current Release
 
-`v0.3.2`
+`v0.3.3`
 
 ## Contributing
 
