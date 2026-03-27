@@ -1,8 +1,7 @@
 # Contributing
 
-## Important: This Repo Is Generated
-
-The Go files under `cdkservicehostmodule/` are produced by `jsii-pacmak`. Do not hand-edit them. To change the constructs, work in [`sc-cdk-service-host-module`](https://github.com/Bh-an/sc-cdk-service-host-module) instead.
+> [!WARNING]
+> **This repo is generated.** The Go files under `cdkservicehostmodule/` are produced by `jsii-pacmak`. Do not hand-edit them. To change the constructs, work in [`sc-cdk-service-host-module`](https://github.com/Bh-an/sc-cdk-service-host-module) instead.
 
 ## Commits
 
@@ -26,10 +25,12 @@ type(scope): short description
 | `main` | Tagged releases |
 | `dev` | Integration and release prep |
 | `ci-cd` | Workflow and automation changes only |
+| `docs/*` | Short-lived documentation updates |
 
 ## Pending Branch Protection Plan
 
-This is the intended GitHub policy, but it is not enforced yet:
+> [!NOTE]
+> This is the intended GitHub policy, but it is **not enforced yet**.
 
 - `main` should require pull requests
 - direct pushes to `main` should be blocked
