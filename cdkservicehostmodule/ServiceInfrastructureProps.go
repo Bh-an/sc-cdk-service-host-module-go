@@ -11,6 +11,7 @@ type ServiceInfrastructureProps struct {
 	Vpc awsec2.IVpc `field:"required" json:"vpc" yaml:"vpc"`
 	KeyPair awsec2.IKeyPair `field:"optional" json:"keyPair" yaml:"keyPair"`
 	KmsKey awskms.IKey `field:"optional" json:"kmsKey" yaml:"kmsKey"`
+	RetainGeneratedKmsKey *bool `field:"optional" json:"retainGeneratedKmsKey" yaml:"retainGeneratedKmsKey"`
 	Role awsiam.IRole `field:"optional" json:"role" yaml:"role"`
 	SecurityGroup awsec2.ISecurityGroup `field:"optional" json:"securityGroup" yaml:"securityGroup"`
 	SharedTags *map[string]*string `field:"optional" json:"sharedTags" yaml:"sharedTags"`

@@ -32,7 +32,7 @@ go build ./...
 ## Go Module
 
 ```bash
-go get github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule@v0.3.3
+go get github.com/Bh-an/sc-cdk-service-host-module-go/cdkservicehostmodule@v0.3.4
 ```
 
 The generated package lives at:
@@ -88,12 +88,12 @@ The release workflow automates this; tagging the source repo triggers the releas
 
 | Tag | Purpose |
 |-----|---------|
-| `v0.3.3` | Repository-level tag |
-| `cdkservicehostmodule/v0.3.3` | Go module subdirectory tag |
+| `v0.3.4` | Repository-level tag |
+| `cdkservicehostmodule/v0.3.4` | Go module subdirectory tag |
 
 ## Current Release
 
-`v0.3.3`
+`v0.3.4`
 
 > [!NOTE]
 > Live-verified via the service repo's public CDK deployment path on `2026-03-27`.

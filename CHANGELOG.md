@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 Wrapper releases track the source repo [`sc-cdk-service-host-module`](https://github.com/Bh-an/sc-cdk-service-host-module). Each entry here reflects a regeneration from the corresponding source version.
 
+## [0.3.4] - 2026-03-27
+
+### Changed
+- Regenerated bindings from the `v0.3.4` CDK source release
+- Added the new generated `retainGeneratedKmsKey` infrastructure prop for module-managed KMS lifecycle control
+
 ## [0.3.3] - 2026-03-27
 
 ### Changed
